@@ -12,7 +12,7 @@ pipeline {
             steps {
                 dir('./fastfood_backend/'){
                     withSonarQubeEnv('sonarQube') {
-                        sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Hermann90_foodtestlatest -DskipTests'
+                        sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Hermann90_foodtestlatest -DskipTests=true'
                     }
                 }
             }
