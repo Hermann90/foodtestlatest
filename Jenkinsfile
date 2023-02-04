@@ -11,8 +11,8 @@ pipeline {
         stage("build & SonarQube analysis") {          
             steps {
                 dir('./fastfood_backend/'){
-                    withSonarQubeEnv('sonarQube') {
-                        sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Hermann90_foodtestlatest -DskipTests=true -X'
+                    withSonarQubeEnv('sonarserver') {
+                        sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Hermann90_foodtestlatest -DskipTests=true'
                     }
                 }
             }
